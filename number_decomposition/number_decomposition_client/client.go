@@ -26,7 +26,7 @@ func main() {
 
 func doServerStreaming(c number_decompositionpb.NumberDecompositionServiceClient) {
 	req := &number_decompositionpb.NumberDecompositionRequest{
-		Number: 120,
+		Number: 898,
 	}
 	resStream, err := c.Decomposition(context.Background(), req)
 	if err != nil {
