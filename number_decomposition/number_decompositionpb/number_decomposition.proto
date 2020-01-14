@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package numberdecomposition;
+option go_package = "number_decompositionpb";
+
+message NumberDecompositionRequest { int32 number = 1; }
+
+message NumberDecompositionResponse { string result = 1; }
+
+service NumberDecompositionService {
+  // Server Streaming
+  rpc Decomposition(NumberDecompositionRequest) returns (stream NumberDecompositionResponse) {};
+}
