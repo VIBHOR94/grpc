@@ -15,8 +15,8 @@ type server struct{}
 
 func (*server) Sum(ctx context.Context, req *sumpb.SumRequest) (*sumpb.SumResponse, error) {
 	fmt.Printf("Sum function was involved with %v\n", req)
-	firstNumber := req.GetAddition().GetFirstNumber()
-	secondNumber := req.GetAddition().GetSecondNumber()
+	firstNumber := req.GetFirstNumber()
+	secondNumber := req.GetSecondNumber()
 	result := firstNumber + secondNumber
 	res := &sumpb.SumResponse{
 		Result: result,

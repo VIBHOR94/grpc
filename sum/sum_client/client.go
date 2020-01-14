@@ -25,14 +25,12 @@ func main() {
 
 func doUnary(c sumpb.SumServiceClient) {
 	req := &sumpb.SumRequest{
-		Addition: &sumpb.Numbers{
-			FirstNumber:  58,
-			SecondNumber: 112,
-		},
+		FirstNumber:  58,
+		SecondNumber: 112,
 	}
 	res, err := c.Sum(context.Background(), req)
 	if err != nil {
-		log.Fatalf("error while calling Greet RPC: %v", c)
+		log.Fatalf("error while calling Sum RPC: %v", c)
 	}
 	log.Printf("Response from Sum: %v", res.Result)
 }
