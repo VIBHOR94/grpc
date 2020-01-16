@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package squareroot;
+option go_package = "square_rootpb";
+
+message SquareRootRequest { int32 number = 1; }
+
+message SquarerootResponse { double result = 1; }
+
+service SquareRootService {
+  // Will Send error of type INVALID_ARGUMENT if number sent is negative
+  rpc ComputeSquareRoot(SquareRootRequest) returns (SquarerootResponse) {};
+}
